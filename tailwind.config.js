@@ -4,7 +4,15 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brownBg: "#CEA98C",
+        secondary: "#222831",
+        danger: "#ff0000",
+        success: "#00ff75c7",
+
+      },
+    },
   },
   plugins: [
     require('tailwindcss'),
