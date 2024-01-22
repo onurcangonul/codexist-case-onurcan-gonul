@@ -2,7 +2,6 @@ import SearchBar from './SearchBar'
 import Product from './ProductItem'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
 const Main = () => {
   const [search, setSearch] = useState("stephen king")
   const [bookData, setBookData] = useState([])

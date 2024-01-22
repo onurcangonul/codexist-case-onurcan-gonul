@@ -3,9 +3,9 @@ import React from 'react'
 const SearchBar = (props) => {
   const { setSearch, searchBook } = props;
     return (
-      <div className="bg-brownBg h-32 p-2">
-        <h2 className="flex justify-center mb-2 font-semibold text-lg text-white">
-          Search Books And Find Your adventure{" "}
+      <div className="bg-gradient-to-r from-sky-500 to-indigo-500 h-44 p-2">
+        <h2 className="flex justify-center mt-6 mb-2 font-semibold text-lg text-white">
+          Search Books And Find Your Adventure
         </h2>
         <div className="relative flex justify-center">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"></div>

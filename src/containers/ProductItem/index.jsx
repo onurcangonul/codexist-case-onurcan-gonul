@@ -1,9 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
 const Product = (props) => {
   const { bookData,} = props;
-
+  const dispatch = useDispatch()
+ const handleAddToCart = (item) => {
+   dispatch(
+     addToCart({
+       id: item.id,
+       title: item.volumeInfo.title,
+       price: item.saleInfo.listPrice,
+       image: item.volumeInfo.imageLinks.thumbnail,
+     })
+   );
+ };
   return (
     <section className="container mx-auto p-10 md:py-12 px-0 md:p-8 md:px-4">
       <section className="p-5 md:p-0 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 items-start">
@@ -36,8 +47,8 @@ const Product = (props) => {
                 {val.volumeInfo.imageLinks &&
                 val.volumeInfo.imageLinks.thumbnail ? (
                   <div>
-                    <Link to={`/product/${val.id}`}>
-                      <section className="p-5 py-10 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
+                    <section className="p-5 py-10 rounded-lg bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
+                      <Link to={`/product/${val.id}`}>
                         <img
                           className="mx-auto"
                           src={val.volumeInfo.imageLinks.thumbnail}
@@ -53,17 +64,21 @@ const Product = (props) => {
                               : ""
                           }`}
                         </h2>
-                        <button
-                          className={`p-2 px-6 ${
-                            priceVal
-                              ? "bg-purple-500 hover:bg-purple-600"
-                              : "bg-gray-300"
-                          } text-white rounded-md `}
-                        >
-                          {priceVal ? "Add To Cart" : "Out Of Stock"}
-                        </button>
-                      </section>
-                    </Link>
+                      </Link>
+                      <button
+                        disabled={!priceVal}
+                        onClick={() => {
+                          handleAddToCart(val);
+                        }}
+                        className={`p-2 px-6 cursor-pointer ${
+                          priceVal
+                            ? "bg-purple-500 hover:bg-purple-600"
+                            : "bg-gray-300"
+                        } text-white rounded-md `}
+                      >
+                        {priceVal ? "Add To Cart" : "Out Of Stock"}
+                      </button>
+                    </section>
                   </div>
                 ) : (
                   ""

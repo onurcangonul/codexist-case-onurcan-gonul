@@ -1,11 +1,10 @@
-import React from 'react'
 
 const About = () => {
   return (
-    <div class="py-16 bg-white">
-      <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-        <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-          <div class="md:5/12 lg:w-5/12">
+    <div className="py-16 bg-white">
+      <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+        <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+          <div className="md:5/12 lg:w-5/12">
             <img
               src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
               alt="image"
@@ -14,11 +13,11 @@ const About = () => {
               height=""
             />
           </div>
-          <div class="md:7/12 lg:w-6/12">
-            <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">
+          <div className="md:7/12 lg:w-6/12">
+            <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">
               Connecting Readers with Worlds of Imagination
             </h2>
-            <p class="mt-6 text-gray-600">
+            <p className="mt-6 text-gray-600">
               At Book Store, our passion for literature is at the heart of
               everything we do. Established with a vision to create a haven for
               bibliophiles, we have been curating a diverse collection of books
@@ -28,10 +27,10 @@ const About = () => {
               novice, come together to explore the boundless realms of
               storytelling.
             </p>
-            <p class="mt-4 text-gray-600">
+            <p className="mt-4 text-gray-600">
               {" "}
               We pride ourselves on offering an extensive range of titles, from
-              timeless classics to contemporary bestsellers, ensuring that every
+              timeless classNameics to contemporary bestsellers, ensuring that every
               visit to Book Store is a journey of discovery. Our knowledgeable
               and friendly staff are dedicated to assisting you in finding the
               perfect read, whether you seek an escape into a fantastical realm,
