@@ -2,21 +2,50 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div class="py-16 bg-white">  
-  <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-      <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-        <div class="md:5/12 lg:w-5/12">
-          <img src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png" alt="image" loading="lazy" width="" height=""/>
-        </div>
-        <div class="md:7/12 lg:w-6/12">
-          <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Nuxt development is carried out by passionate developers</h2>
-          <p class="mt-6 text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!</p>
-          <p class="mt-4 text-gray-600"> Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at? Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.</p>
+    <div class="py-16 bg-white">
+      <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+        <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+          <div class="md:5/12 lg:w-5/12">
+            <img
+              src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
+              alt="image"
+              loading="lazy"
+              width=""
+              height=""
+            />
+          </div>
+          <div class="md:7/12 lg:w-6/12">
+            <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">
+              Connecting Readers with Worlds of Imagination
+            </h2>
+            <p class="mt-6 text-gray-600">
+              At Book Store, our passion for literature is at the heart of
+              everything we do. Established with a vision to create a haven for
+              bibliophiles, we have been curating a diverse collection of books
+              that transcend genres and ignite the imaginations of readers since
+              our inception. Our bookstore is more than just a retail space;
+              it's a community hub where book enthusiasts, both seasoned and
+              novice, come together to explore the boundless realms of
+              storytelling.
+            </p>
+            <p class="mt-4 text-gray-600">
+              {" "}
+              We pride ourselves on offering an extensive range of titles, from
+              timeless classics to contemporary bestsellers, ensuring that every
+              visit to Book Store is a journey of discovery. Our knowledgeable
+              and friendly staff are dedicated to assisting you in finding the
+              perfect read, whether you seek an escape into a fantastical realm,
+              a thought-provoking exploration, or a literary masterpiece. At
+              Book Store, we believe in the transformative power of books and
+              strive to foster a love for reading that transcends generations.
+              Join us on this literary adventure, where every book is a key to
+              unlocking new worlds of imagination and knowledge.
+            </p>
+          </div>
         </div>
       </div>
-  </div>
-</div>
-  )
+    </div>
+  );
 }
 
 export default About;
