@@ -18,7 +18,6 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail/>} />
           <Route path="/cart" element={<ShopingCart />} />
           <Route path="/checkout" element={<CheckOut />} />
-
         </Routes>
         <Footer />
       </>
