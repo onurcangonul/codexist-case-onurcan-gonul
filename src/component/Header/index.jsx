@@ -3,7 +3,6 @@ import logo from "../../assent/logo.png";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 

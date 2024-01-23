@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+// Redux Import
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCartItems,
@@ -7,16 +6,20 @@ import {
   selectTotal,
   removeFromCart,
 } from "../../redux/cartSlice";
+// Thirtparty Import
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+
 const ShopingCart = () => {
   const cartItems = useSelector(selectCartItems);
   const subtotal = useSelector(selectSubtotal);
   const total = useSelector(selectTotal);
   const dispatch = useDispatch();
-  
-   const handleRemoveClick = (itemId) => {
-     dispatch(removeFromCart({ id: itemId }));
-   };
-   console.log("Redux Verisi:", cartItems);
+
+  const handleRemoveClick = (itemId) => {
+    dispatch(removeFromCart({ id: itemId }));
+    toast.info("Book Successfully Deleted!");
+  };
   return (
     <>
       {cartItems.length > 0 ? (
@@ -76,7 +79,9 @@ const ShopingCart = () => {
                   <div className="mt-6 border-t border-b py-2">
                     <div className="flex items-center justify-between">
                       <p className="text-sm text-gray-400">Subtotal</p>
-                      <p className="text-lg font-semibold text-gray-900">{`${subtotal} TL`}</p>
+                      <p className="text-lg font-semibold text-gray-900">{`${subtotal.toFixed(
+                        2
+                      )} TL`}</p>
                     </div>
                     <div className="flex items-center justify-between">
                       <p className="text-sm text-gray-400">Shipping</p>
@@ -88,7 +93,9 @@ const ShopingCart = () => {
                   <div className="mt-6 flex items-center justify-between">
                     <p className="text-sm font-medium text-gray-900">Total</p>
                     <p className="text-2xl font-semibold text-gray-900">
-                      <p className="text-2xl font-semibold text-gray-900">{`${total} TL`}</p>
+                      <p className="text-2xl font-semibold text-gray-900">{`${total.toFixed(
+                        2
+                      )} TL`}</p>
                     </p>
                   </div>
 
@@ -124,12 +131,14 @@ const ShopingCart = () => {
       ) : (
         <section className="h-screen bg-gray-100 py-12 sm:py-16 lg:py-5">
           <div className="mx-auto px-4 sm:px-6 lg:px-8">
-            <span className='h-screen flex justify-center items-center font-semibold text-3xl'>Your Cart is Empty</span>
+            <span className="h-screen flex justify-center items-center font-semibold text-3xl">
+              Your Cart is Empty
+            </span>
           </div>
         </section>
       )}
     </>
   );
-}
+};
 
-export default ShopingCart
+export default ShopingCart;

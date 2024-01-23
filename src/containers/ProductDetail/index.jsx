@@ -1,39 +1,74 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+
+// helpers
+import { removeHtmlTagsAndTruncate } from '../../helpers';
+// Icons
 import { FiBookOpen } from "react-icons/fi";
 import { FaGooglePlay, FaPrint } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
 import { BiBasket } from "react-icons/bi";
 import { PiSmileySad } from "react-icons/pi";
-import { removeHtmlTagsAndTruncate } from '../../helpers';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/cartSlice';
+import { FaRegCheckCircle } from "react-icons/fa";
+// Redux Import
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, selectCartItems } from '../../redux/cartSlice';
+// Thirtparty Import
+import { useParams } from 'react-router-dom';
+import { toast } from "react-toastify";
+import axios from 'axios';
+
 const ProductDetail = () => {
   const params = useParams()
   const dispatch = useDispatch();
   const [bookDetailData, setBookDetailData] = useState([])
   const [bookDetailPrice, setBookDetailPrice] = useState([]);
-   const priceVal =
-     bookDetailPrice.listPrice && bookDetailPrice.listPrice.amount
-       ? true
-       : false;
+  const [addedToCart, setAddedToCart] = useState(false);
+
+  const cartItems = useSelector(selectCartItems);
+  const priceVal =
+    bookDetailPrice.listPrice && bookDetailPrice.listPrice.amount
+      ? true
+      : false;
+  
   useEffect(() => {
-   const fetchInitialDetailData = async () => {
-     try {
-       const res = await axios.get(
-         `https://www.googleapis.com/books/v1/volumes/${params.id}`
-       );
-       setBookDetailData(res.data.volumeInfo);
-       setBookDetailPrice(res.data.saleInfo);
+    // get detail from api with ID
+    const fetchInitialDetailData = async () => {
+      try {
+        const res = await axios.get(
+          `https://www.googleapis.com/books/v1/volumes/${params.id}`
+        );
+        setBookDetailData(res.data.volumeInfo);
+        setBookDetailPrice(res.data.saleInfo);
+        const isInCart = cartItems.some((item) => item.id === params.id);
+        setAddedToCart(isInCart);
 
-     } catch (err) {
-       console.log(err);
-     }
-   };
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-   fetchInitialDetailData();
- }, []);  
+    fetchInitialDetailData();
+  }, []);
+
+  const handleAddToCart = () => {
+    if (addedToCart) {
+      // Item is already in the cart
+      toast.info("The product is already in your cart.📕");
+    } else {
+      // Item is not in the cart, add it to the cart
+      toast.success("Ürün Eklendi 📕");
+      dispatch(
+        addToCart({
+          id: params.id,
+          title: bookDetailData.title,
+          price: bookDetailPrice.listPrice,
+          image:
+            bookDetailData.imageLinks && bookDetailData.imageLinks.thumbnail,
+        })
+      );
+      setAddedToCart(true);
+    }
+  };
   return (
     <div className="container px-5 py-24 mx-auto">
       <div className="lg:w-4/5 mx-auto flex flex-wrap">
@@ -91,24 +126,23 @@ const ProductDetail = () => {
             </span>
             <button
               onClick={() => {
-                dispatch(
-                  addToCart({
-                    id: params.id,
-                    title: bookDetailData.title,
-                    price: bookDetailPrice.listPrice,
-                    image:
-                      bookDetailData.imageLinks &&
-                      bookDetailData.imageLinks.thumbnail,
-                  })
-                );
+                handleAddToCart();
               }}
               className={`flex ml-auto text-white ${
-                priceVal
-                  ? "bg-red-500 hover:bg-red-600"
-                  : "bg-gray-500 pointer-events-none"
+                addedToCart
+                  ? "bg-blue-500"
+                  : priceVal
+                  ? "bg-purple-500 hover:bg-purple-600"
+                  : "bg-gray-300 pointer-events-none"
               }  border-0 py-2 px-6 focus:outline-none rounded`}
             >
-              {priceVal ? (
+              {addedToCart ? (
+                <>
+                  <span className="flex justify-center items-center gap-2">
+                    Product Added <FaRegCheckCircle />
+                  </span>
+                </>
+              ) : priceVal ? (
                 <>
                   <BiBasket size={24} />{" "}
                   <span className="ml-2">Add To Cart</span>
