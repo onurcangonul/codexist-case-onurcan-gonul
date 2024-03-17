@@ -60,7 +60,6 @@ const CheckOut = () => {
               Your Summary Is Empty
             </div>
           )}
-
           <p className="mt-8 text-lg font-medium">Shipping Methods</p>
           <form className="mt-5 grid gap-6">
             <div className="relative">

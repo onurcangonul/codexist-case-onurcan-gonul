@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 const PaymentSuccess = () => {
   const navigate = useNavigate()
   setTimeout(() => {
-    // send to home page
     navigate("/")
   },2500)
   return (

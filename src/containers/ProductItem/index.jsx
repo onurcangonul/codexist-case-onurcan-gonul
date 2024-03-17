@@ -58,7 +58,6 @@ const Product = (props) => {
             const addedToCart = cartItems.find(
               (item) => item.id === val.id
             )?.addedToCart;
-
             return (
               <React.Fragment key={val.id}>
                 {val.volumeInfo.imageLinks &&

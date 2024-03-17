@@ -27,7 +27,6 @@ const Main = () => {
         console.log(err);
       }
     };
-
     fetchInitialData();
   }, []);
 

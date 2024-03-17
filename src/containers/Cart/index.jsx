@@ -98,7 +98,6 @@ const ShopingCart = () => {
                       )} TL`}</p>
                     </p>
                   </div>
-
                   <div className="mt-6 text-center">
                     <Link to="/checkout">
                       <button

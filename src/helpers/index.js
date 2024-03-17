@@ -12,6 +12,5 @@ export const removeHtmlTagsAndTruncate = (input, maxLength = 700) => {
     if (finalText.length > maxLength) {
         truncatedText += '...';
     }
-
     return truncatedText;
 };

@@ -30,7 +30,6 @@ export const cartSlice = createSlice({
     },
   },
 });
-
 export const { addToCart, removeFromCart, resetCart, markAsAdded } = cartSlice.actions;
 
 export const selectCartItems = (state) => state.cart.items;
