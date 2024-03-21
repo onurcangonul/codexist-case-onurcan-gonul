@@ -48,7 +48,7 @@ const CheckOut = () => {
                         {val.id ?? ""}
                       </span>
                       <p className="text-lg font-bold">
-                        {`$${val.price.amount.toFixed(2)}` ?? "$0.00"}
+                        {`${val.price.amount.toFixed(2)}TL` ?? "0.00TL"}
                       </p>
                     </div>
                   </div>
