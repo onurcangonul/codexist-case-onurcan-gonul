@@ -15,7 +15,7 @@ const Product = (props) => {
   const cartItems = useSelector(selectCartItems);
 
   const handleAddToCart = (item) => {
-    toast.success("Product Added 📕");
+    toast.success("Ürün Sepete Eklendi 📕");
     dispatch(
       addToCart({
         id: item.id,
@@ -97,13 +97,13 @@ const Product = (props) => {
                         {addedToCart ? (
                           <>
                             <span className="flex justify-center items-center gap-2">
-                              Product Added <FaRegCheckCircle />
+                              Ürün Sepete Eklendi <FaRegCheckCircle />
                             </span>
                           </>
                         ) : priceVal ? (
-                          "Add To Cart"
+                          "Sepete Ekle"
                         ) : (
-                          "Out Of Stock"
+                          "Stokta Yok"
                         )}
                       </button>
                     </section>

@@ -17,7 +17,7 @@ const CheckOut = () => {
   const handlePlaceOrder = () => {
     // Dispatch the resetCart action to clear the cart
     dispatch(resetCart());
-    toast.success("Your order has been completed successfully 🎉");
+    toast.success("Siparişiniz Başarıyla Tamamlandı. Anasayfaya yönlendiriliyorsunuz.... 🎉");
     navigate("/payment-success");
   };
   return (
@@ -25,9 +25,9 @@ const CheckOut = () => {
       <div className="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32"></div>
       <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
         <div className="px-4 pt-8">
-          <p className="text-xl font-medium">Order Summary</p>
+          <p className="text-xl font-medium">Sipariş Özeti</p>
           <p className="text-gray-400">
-            Check your items. And select a suitable shipping method.
+            Ürünlerinizi kontrol edin ve Kargo Firmasını Seçin.
           </p>
           {cartItems.length > 0 ? (
             <div>
@@ -57,10 +57,10 @@ const CheckOut = () => {
             </div>
           ) : (
             <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-              Your Summary Is Empty
+              Ödeme İçin Sepeteinize Ürün Ekleyin
             </div>
           )}
-          <p className="mt-8 text-lg font-medium">Shipping Methods</p>
+          <p className="mt-8 text-lg font-medium">Kargo Firmaları</p>
           <form className="mt-5 grid gap-6">
             <div className="relative">
               <input
@@ -77,9 +77,9 @@ const CheckOut = () => {
               >
                 <img className="w-14 object-contain" src={ups} alt="" />
                 <div className="ml-5">
-                  <span className="mt-2 font-semibold">UPS Delivery</span>
+                  <span className="mt-2 font-semibold">UPS Karfo</span>
                   <p className="text-slate-500 text-sm leading-6">
-                    Delivery: 2-4 Days
+                    Ortalama: 2-4 Gün
                   </p>
                 </div>
               </label>
@@ -99,9 +99,9 @@ const CheckOut = () => {
               >
                 <img className="w-14 object-contain" src={fedex} alt="" />
                 <div className="ml-5">
-                  <span className="mt-2 font-semibold">Fedex Delivery</span>
+                  <span className="mt-2 font-semibold">Fedex Kargo</span>
                   <p className="text-slate-500 text-sm leading-6">
-                    Delivery: 2-4 Days
+                    Ortalama: 2-4 Gün
                   </p>
                 </div>
               </label>
@@ -109,9 +109,9 @@ const CheckOut = () => {
           </form>
         </div>
         <div className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
-          <p className="text-xl font-medium">Payment Details</p>
+          <p className="text-xl font-medium">Ödeme Detayları</p>
           <p className="text-gray-400">
-            Complete your order by providing your payment details.
+            Ödeme bilgilerinizi girerek siparişinizi tamamlayın.
           </p>
           <div className="">
             <label for="email" className="mt-4 mb-2 block text-sm font-medium">
@@ -146,7 +146,7 @@ const CheckOut = () => {
               for="card-holder"
               className="mt-4 mb-2 block text-sm font-medium"
             >
-              Card Holder
+            Kart Üzerindeki İsim
             </label>
             <div className="relative">
               <input
@@ -154,7 +154,7 @@ const CheckOut = () => {
                 id="card-holder"
                 name="card-holder"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm uppercase shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
-                placeholder="Your full name here"
+                placeholder="Yİsim Soyisim"
               />
               <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                 <svg
@@ -177,7 +177,7 @@ const CheckOut = () => {
               for="card-no"
               className="mt-4 mb-2 block text-sm font-medium"
             >
-              Card Details
+             Kart Numarası
             </label>
             <div className="flex">
               <div className="relative w-7/12 flex-shrink-0">
@@ -206,7 +206,7 @@ const CheckOut = () => {
                 type="text"
                 name="credit-expiry"
                 className="w-full rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
-                placeholder="MM/YY"
+                placeholder="AY/YIL"
               />
               <input
                 type="text"
@@ -219,7 +219,7 @@ const CheckOut = () => {
               for="billing-address"
               className="mt-4 mb-2 block text-sm font-medium"
             >
-              Billing Address
+            Adres
             </label>
             <div className="flex flex-col sm:flex-row">
               <div className="relative flex-shrink-0 sm:w-7/12">
@@ -228,7 +228,7 @@ const CheckOut = () => {
                   id="billing-address"
                   name="billing-address"
                   className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
-                  placeholder="Street Address"
+                  placeholder="Adres"
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                   <img
@@ -243,7 +243,7 @@ const CheckOut = () => {
                 name="billing-state"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
               >
-                <option value="State">State</option>
+                <option value="State"></option>
               </select>
               <input
                 type="text"
@@ -255,18 +255,18 @@ const CheckOut = () => {
 
             <div className="mt-6 border-t border-b py-2">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-medium text-gray-900">Subtotal</p>
+                <p className="text-sm font-medium text-gray-900">Ara Toplam</p>
                 <p className="font-semibold text-gray-900">{`${subtotal.toFixed(
                   2
                 )} TL`}</p>
               </div>
               <div className="flex items-center justify-between">
-                <p className="text-sm font-medium text-gray-900">Shipping</p>
+                <p className="text-sm font-medium text-gray-900">Kargo Ücreti</p>
                 <p className="font-semibold text-gray-900">8.00 TL</p>
               </div>
             </div>
             <div className="mt-6 flex items-center justify-between">
-              <p className="text-sm font-medium text-gray-900">Total</p>
+              <p className="text-sm font-medium text-gray-900">Toplam Ödenecek</p>
               <p className="text-2xl font-semibold text-gray-900">{`${total.toFixed(
                 2
               )} TL`}</p>
@@ -276,7 +276,7 @@ const CheckOut = () => {
             onClick={() => handlePlaceOrder()}
             className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white"
           >
-            Place Order
+            Siparişi Tamamla
           </button>
         </div>
       </div>

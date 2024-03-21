@@ -27,7 +27,7 @@ const ShopingCart = () => {
           <div className="mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center">
               <h1 className="text-2xl font-semibold text-gray-900">
-                Your Cart
+                Sepetiniz
               </h1>
             </div>
             <div className="mx-auto mt-8 max-w-2xl md:mt-12">
@@ -67,7 +67,7 @@ const ShopingCart = () => {
                                   onClick={() => handleRemoveClick(val.id)}
                                   className="flex rounded p-2 text-center text-red-500 underline transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900"
                                 >
-                                  Remove
+                                  Kaldır
                                 </button>
                               </div>
                             </div>
@@ -78,20 +78,20 @@ const ShopingCart = () => {
 
                   <div className="mt-6 border-t border-b py-2">
                     <div className="flex items-center justify-between">
-                      <p className="text-sm text-gray-400">Subtotal</p>
+                      <p className="text-sm text-gray-400">Ara Toplam</p>
                       <p className="text-lg font-semibold text-gray-900">{`${subtotal.toFixed(
                         2
                       )} TL`}</p>
                     </div>
                     <div className="flex items-center justify-between">
-                      <p className="text-sm text-gray-400">Shipping</p>
+                      <p className="text-sm text-gray-400">Kargo</p>
                       <p className="text-lg font-semibold text-gray-900">
                         8.00 TL
                       </p>
                     </div>
                   </div>
                   <div className="mt-6 flex items-center justify-between">
-                    <p className="text-sm font-medium text-gray-900">Total</p>
+                    <p className="text-sm font-medium text-gray-900">Toplam</p>
                     <p className="text-2xl font-semibold text-gray-900">
                       <p className="text-2xl font-semibold text-gray-900">{`${total.toFixed(
                         2
@@ -104,7 +104,7 @@ const ShopingCart = () => {
                         type="button"
                         className="group inline-flex w-full items-center justify-center rounded-md bg-gray-900 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
                       >
-                        Checkout
+                        Ödeme
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="group-hover:ml-8 ml-4 h-6 w-6 transition-all"
@@ -131,7 +131,7 @@ const ShopingCart = () => {
         <section className="h-screen bg-gray-100 py-12 sm:py-16 lg:py-5">
           <div className="mx-auto px-4 sm:px-6 lg:px-8">
             <span className="h-screen flex justify-center items-center font-semibold text-3xl">
-              Your Cart is Empty
+              Sepetiniz Boş
             </span>
           </div>
         </section>

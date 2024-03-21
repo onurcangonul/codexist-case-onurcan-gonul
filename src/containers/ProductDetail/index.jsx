@@ -88,7 +88,7 @@ const ProductDetail = () => {
             <span className="flex items-center">
               <FiBookOpen color="#6B7280" size={24} />
               <span className="ml-2 font-semibold">
-                Paper Count: {bookDetailData.pageCount ?? ""}
+                Sayfa Sayısı {bookDetailData.pageCount ?? ""}
               </span>
             </span>
             <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
@@ -108,11 +108,11 @@ const ProductDetail = () => {
             <div className="flex gap-2">
               <MdDateRange size={24} color="#6B7280" />
               <span className="ml-2 font-semibold underline">
-                Published Date {bookDetailData.publishedDate ?? ""}
+                Yayın Tarihi {bookDetailData.publishedDate ?? ""}
               </span>
               <FaPrint size={24} color="#6B7280" />
               <span className="ml-2 font-semibold underline">
-                Publisher {bookDetailData.publisher ?? ""}
+                Yayıncı {bookDetailData.publisher ?? ""}
               </span>
             </div>
           </div>
@@ -139,18 +139,18 @@ const ProductDetail = () => {
               {addedToCart ? (
                 <>
                   <span className="flex justify-center items-center gap-2">
-                    Product Added <FaRegCheckCircle />
+                    Ürün Sepete Eklendi <FaRegCheckCircle />
                   </span>
                 </>
               ) : priceVal ? (
                 <>
                   <BiBasket size={24} />{" "}
-                  <span className="ml-2">Add To Cart</span>
+                  <span className="ml-2">Sepete Ekle</span>
                 </>
               ) : (
                 <>
                   <PiSmileySad size={24} />
-                  <span className="ml-2">Out Of Stock</span>
+                  <span className="ml-2">Stokta Yok</span>
                 </>
               )}
             </button>

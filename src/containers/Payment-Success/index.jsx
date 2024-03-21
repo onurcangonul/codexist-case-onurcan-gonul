@@ -17,18 +17,18 @@ const PaymentSuccess = () => {
         </svg>
         <div className="text-center">
           <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">
-            Payment Done!
+           Sipariş Tamamlandı
           </h3>
           <p className="text-gray-600 my-2">
-            Thank you for completing your secure online payment.
+            Ödeme için teşekkürler
           </p>
-          <p> Have a great day! </p>
+          <p> Keyifle Okumalar </p>
           <div className="py-10 text-center">
             <Link
               to="/"
               className=" rounded-lg px-12 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3"
             >
-              Back To The Shopping
+              Alışverişe geri dön
             </Link>
           </div>
         </div>

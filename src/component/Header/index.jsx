@@ -16,17 +16,17 @@ const Header = () => {
             <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
           </Link>
           <div className="hidden md:flex items-center lg:order-2">
-            <Link
+            {/* <Link
               to="/about-us"
               className="text-gray-800 dark:text-white hover:bg-gray-50 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
             >
               About Us
-            </Link>
+            </Link> */}
             <Link
               to="/cart"
               className="text-gray-800 dark:text-white hover:bg-gray-50 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
             >
-              Cart
+              Sepet
             </Link>
           </div>
 
